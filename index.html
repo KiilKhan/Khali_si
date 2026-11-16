@@ -11,31 +11,7 @@
     <link rel="preconnect" href="https://gstatic.com" crossorigin>
     <link href="https://googleapis.com/css2?family=Cinzel:wght@700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
-<body>
-<a href="https://t.me" onclick="openTelegram(event)" style="display: inline-block; padding: 12px 24px; background-color: #2AABEE; color: white; text-decoration: none; border-radius: 8px; font-family: sans-serif; font-weight: bold;">
-  Перейти в Telegram-канал
-</a>
-
-<script>
-  function openTelegram(e) {
-    // khalisikirovsky
-    const channelName = 'my_shop';
-    
-    // Проверяем, зашел ли человек с телефона
-    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-    
-    if (isMobile) {
-      e.preventDefault();
-      // Мгновенно открываем приложение Telegram на телефоне
-      window.location.href = 'tg://resolve?domain=' + channelName;
-      
-      // Если приложение не установлено, через 1.5 секунды откроется обычная страница
-      setTimeout(function() {
-        window.location.href = 'https://t.me' + channelName;
-      }, 1500);
-    }
-  }
-</script>
+<body>}
 
     <!-- Шапка сайта -->
     <header class="header">
@@ -62,7 +38,27 @@
             <p class="hero-subtitle">Устройства, жидкости и аксессуары в пгт. Кировский</p>
             <div class="hero-buttons">
                 <a href="#catalog" class="btn-gold">Смотреть каталог</a>
-                <a href="https://t.me?direct" target="_blank" class="btn-dark">Написать в Telegram</a>
+                <!-- Рабочая кнопка перехода в канал @khalisikirovsky -->
+<a href="https://t.me/khalisikirovsky" onclick="openTelegram(event)" style="display: inline-block; padding: 12px 24px; background-color: #2AABEE; color: white; text-decoration: none; border-radius: 8px; font-family: sans-serif; font-weight: bold;">
+  Перейти в Telegram-канал
+</a>
+
+<script>
+  function openTelegram(e) {
+    const channelName = 'khalisikirovsky';
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    
+    if (isMobile) {
+      e.preventDefault();
+      window.location.href = 'tg://resolve?domain=' + channelName;
+      
+      setTimeout(function() {
+        window.location.href = 'https://t.me/' + channelName;
+      }, 1500);
+    }
+  }
+</script>
+
             </div>
         </div>
     </section>
